@@ -1,39 +1,19 @@
 class Solution {
 public:
-    int numSubarraysWithSum(vector<int>& v, int goal) {
-        int n = v.size();
-        int l = 0 , r = 0, sum = 0 , ct = 0 , ct1 = 0;
-        if(goal < 0){
-            ct = 0;
-        }
-        else{
-        while(r < n){
-            sum = sum + v[r];
-            while(sum > goal){
-                sum = sum - v[l];
+int function(vector<int>& nums, int goal){
+    if(goal<0)return 0;
+        int l = 0, sum = 0, count = 0;
+        for (int r = 0; r < nums.size(); r++) {
+            sum+=nums[r];
+            while(sum>goal){
+                sum=sum-nums[l];
                 l++;
             }
-            ct = ct + r-l+1;
-            r++;
+            count=count+(r-l+1);
         }
-        }
-        l = 0 , r = 0 , sum = 0;
-        goal = goal -1;
-        if(goal < 0){
-            ct1 = 0;
-        }
-        else{
-        while(r < n){
-            sum = sum + v[r];
-            while(sum > goal){
-                sum = sum - v[l];
-                l++;
-            }
-            ct1 = ct1 + r-l+1;
-            r++;
-        }
-        }
-        return (ct-ct1);
-        
+        return count;
+}
+    int numSubarraysWithSum(vector<int>& nums, int goal) {
+        return function(nums,goal)-function(nums,goal-1);
     }
 };
