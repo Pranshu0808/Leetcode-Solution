@@ -15,12 +15,12 @@ public:
             
             if(ct > ct1){
                 st.pop();
-                while(s[r] == '['){
-                    st.push(s[r]);
-                    r--;
-                }
+                // while(s[r] == '['){
+                //     st.push(s[r]);
+                //     r--;
+                // }
                 
-                s[r] = ']';
+                // s[r] = ']';
                 ct--;
                 ct1++;
                 sum++;
