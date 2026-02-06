@@ -1,13 +1,11 @@
 class Solution {
 public:
     void rotate(vector<int>& v, int k){
-        if(v.size() == 1){
-            v[0] = v[0];
-        }
-        int x = k%v.size();
-        if(v.size() > 1){
-        ::rotate(v.rbegin() ,v.rbegin() + x , v.rend());
-        }
+        k = k%v.size();
+        reverse(v.begin() , v.end());
+        reverse(v.begin() , v.begin()+k);
+        reverse(v.begin()+k , v.end());
+
 
     }
 };
