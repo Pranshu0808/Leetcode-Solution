@@ -7,7 +7,7 @@ private:
             a = a * 10 + (n % 10);
             n /= 10;
         }
-        return a;
+       return a;
     }
 public:
     int mirrorDistance(int n) {
