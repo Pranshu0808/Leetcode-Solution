@@ -8,7 +8,7 @@ public:
             int x=arr1[i];
             while(x>0){
                 s.push_back(char((x%10)+'0'));
-                x=x/10;
+              x=x/10;
             }
             reverse(s.begin(),s.end());
             for(int i=1;i<=s.size();i++){
