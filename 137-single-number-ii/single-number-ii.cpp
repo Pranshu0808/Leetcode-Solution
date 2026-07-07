@@ -6,7 +6,7 @@ public:
             m[nums[i]]++;
         }
         int p; 
-        for(auto it = m .begin(); it != m.end(); ++it){
+        for(auto it = m.begin(); it != m.end(); ++it){
             if(it->second == 1){
                 p = it->first;
             }
